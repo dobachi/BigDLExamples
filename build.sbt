@@ -18,14 +18,16 @@ lazy val root = (project in file(".")).
       // Test your code PLEASE!!!
       "org.scalatest" %% "scalatest" % "3.0.1" % "test",
       "org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
-      "com.holdenkarau" %% "spark-testing-base" % "2.2.0_0.7.2" % "test"),
+      "com.holdenkarau" %% "spark-testing-base" % "2.2.0_0.7.2" % "test",
+      "com.intel.analytics.bigdl" % "bigdl" % "0.5.0-SNAPSHOT"),
     scalacOptions ++= Seq("-deprecation", "-unchecked"),
     pomIncludeRepository := { x => false },
     resolvers ++= Seq(
       "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/",
       "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
       "Second Typesafe repo" at "http://repo.typesafe.com/typesafe/maven-releases/",
-      Resolver.sonatypeRepo("public")
+      Resolver.sonatypeRepo("public"),
+      Resolver.mavenLocal
     ),
     // publish settings
     publishTo := {
