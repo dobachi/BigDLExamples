@@ -285,7 +285,7 @@ class TextClassifierOnHDFS(param: AbstractTextClassificationOnHDFSParams) extend
 abstract class AbstractTextClassificationOnHDFSParams extends Serializable {
   def baseDir: String = "./"
   def maxSequenceLength: Int = 1000
-  def maxWordsNum: Int = 20000w
+  def maxWordsNum: Int = 20000
   def trainingSplit: Double = 0.8
   def batchSize: Int = 128
   def embeddingDim: Int = 100
